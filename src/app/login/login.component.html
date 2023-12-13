@@ -1,0 +1,25 @@
+<html lang="pt-br">
+<head>
+	<title>Login - DietAmiga</title>
+</head>
+<body>
+  <div class="container">
+    <div class="square-login">
+      <div class="login-text">LOGIN</div>
+      <div class="fork">
+        <img src="../../assets/img/fork-login.png" alt="Mascote">
+      </div>
+      <form (change)="isValid()" class="credentials" [formGroup]="cadastroForm" (ngSubmit)="submitLogin()">
+        <div>EMAIL</div>
+        <input formControlName="email" (keyup)="isValid()" type="text">
+        <div>SENHA</div>
+        <input formControlName="password" type="password" (keyup)="isValid()">
+      <div class="forgot-password"><a href="">ESQUECEU A SENHA?</a></div>
+      <div [ngClass]="valid == true ? 'enter' : 'enter-disabled'"><button [disabled]="cadastroForm.invalid" type="submit">ENTRAR</button></div>
+      <div class="error" *ngIf="authError"><span>Email ou senha invalido</span></div>
+      <div class="register"> NÃO TEM UMA CONTA?<a routerLink="/cadastro">CADASTRAR-SE</a></div>
+    </form>
+    </div>
+  </div>
+</body>
+</html>

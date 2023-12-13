@@ -1,0 +1,47 @@
+<article class="manha">
+    <section>
+            <div class="horariomanha">
+                café da manhã
+            </div>
+            <span class="refImg"><img [src]="'../../assets/img/'+ typeref +'.svg'" alt=""></span>
+            <div class="test"></div>
+
+            <div  class="refeicoes-choose" *ngIf="selection == 'carboidrato'">
+              <a (click)="setNameOfFood(0,item.id,item.nome,item.cal)" (click)="selection=''"  class="food-choice" *ngFor="let item of allCarbFoods">
+                  <div class="tipocomida" style="font-size:1.4vw"> {{ item.nome }} </div>
+              </a>
+            </div>
+            <div  class="refeicoes-choose" *ngIf="selection == 'proteína'">
+              <a (click)="setNameOfFood(1,item.id,item.nome,item.cal)" (click)="selection=''" class="food-choice" *ngFor="let item of allProtFoods">
+                  <div class="tipocomida" style="font-size:1.4vw"> {{ item.nome }} </div>
+              </a>
+            </div>
+            <div  class="refeicoes-choose" *ngIf="selection == 'legume'">
+              <a (click)="selection=''" class="food-choice" *ngFor="let item of allLegumsFoods">
+                  <div class="tipocomida" style="font-size:1.4vw"> {{ item.nome }} </div>
+              </a>
+            </div>
+            <div  class="refeicoes-choose" *ngIf="selection == 'líquido'" >
+              <a (click)="setNameOfFood(2,item.id,item.nome,item.cal)" (click)="selection=''" class="food-choice" *ngFor="let item of allLiquidFoods">
+                  <div class="tipocomida" style="font-size:1.4vw"> {{ item.nome }} </div>
+              </a>
+            </div>
+            <div  class="refeicoes-choose" *ngIf="selection == 'fruta'">
+              <a (click)="setNameOfFood(3,item.id,item.nome,item.cal)" (click)="selection=''" class="food-choice" *ngFor="let item of allFrutFoods">
+                  <div class="tipocomida" style="font-size:1.4vw"> {{ item.nome }} </div>
+              </a>
+            </div>
+
+        <div  class="refeicoes" *ngIf="selection==''">
+        <a (click)="selection=i.tipo.toLowerCase()" class="food-choice" *ngFor="let i of ref">
+            <div class="tipocomida" style="font-size:1.4vw">{{ i.tipo }}</div>
+            <img class="food-image" [src]="'../../assets/img/'+ i.tipo+'/'+ i.imgname+'.png'" alt="Food 1">
+            <p class="food-caption" style="font-size:1.4vw">{{ i.nome }}</p>
+        </a>
+      </div>
+      <span (click)="saveRef()" class="backbutton" *ngIf="selection=='' && this.arrayObjectRef.length>1">
+        <img src="../../assets/img/arrow.png" alt="Voltar">
+      </span>
+
+    </section>
+  </article>

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(214, 160, 59);
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: Montserrat;
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(236, 236, 174);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-family: Agbalumo;
+    font-size: 25px;
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(197, 112, 0);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.enter {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.enter:hover {
+    background-color: #45a049;
+}
+
+.enter-disabled{
+  background-color:#f6980a31 ;
+}
+
+.verifybutton{
+  border-radius: 15%;
+  margin-left: 5%;
+  color: rgb(197, 112, 0);
+  background-color: #FFFFFF;
+}
+

@@ -1,0 +1,223 @@
+<article>
+<section *ngIf="getQuestions()==0" class="questions1">
+  <div>
+    <div class="TextQuestion" id="fc">
+    <span >Olá, {{userName}} Bem vindo ao DietAmiga,Entre os itens abaixo, qual se enquadra melhor com seu objetivo:</span>
+  </div>
+    <br>
+    <div class="imgSelection">
+      <img src="../../assets/img/Forkperguntando.png" alt="">
+    <span id="selection">
+      <a (click)="setDiet('Perda de Peso')">Perda de Peso</a>
+      <a (click)="setDiet('Melhorar Alimentacao')">Melhorar Alimentação</a>
+      <a (click)="setDiet('Ganho de Massa')">Ganho de massa</a>
+    </span>
+  </div>
+  </div>
+</section>
+
+<section *ngIf="getQuestions()==1" class="questions2">
+  <div>
+    <div class="TextQuestion" id="cf">
+    <span>Ok! {{getDiet()}}. Vou te apresentar 5 itens para cada tipo de refeição: café da manhã, almoço, café da tarde e janta. Selecione os da sua preferência Obs: Não se preocupe, depois voce pode alterar.</span>
+  </div>
+    <br>
+    <br>
+    <span id="ref" >Escolha para o Café da manhã </span>
+    <div class="imgSelection">
+      <span id="selection">
+      <select (change)="carb = $any($event).target.value">
+        <option *ngIf="carb == 0" [value]="0"></option>
+        <option *ngFor="let item of allCarbFoods" [value]="jsonStringfy(item)"  class="options">{{item.nome}}</option>
+      </select>
+
+      <select (change)="prot = $any($event).target.value">
+        <option *ngIf="prot == 0" [value]="0"></option>
+        <option *ngFor="let item of allProtFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+      </select>
+
+      <select (change)="frut = $any($event).target.value">
+        <option [value]="0">Nenhuma</option>
+        <option *ngFor="let item of allFrutFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+      </select>
+
+      <select (change)="liquid = $any($event).target.value">
+        <option *ngIf="liquid == 0"  [value]="0"></option>
+        <option *ngFor="let item of allLiquidFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+      </select>
+
+      </span>
+      <img class="imgMirror" src="../../assets/img/Forkperguntando.png" alt="">
+  </div>
+  </div>
+  <div class="button">
+    <span (click)="setCompleteRef(carb,prot,frut,liquid,legums,refCm)" (click)="validateCompleteRef(false,false,carb,prot,frut,liquid,legums)" (click)="calcCalTotal(true,'Cm')" (click)="sumQuestions()" >
+    <img src="../../assets/img/arrow.png">
+  </span>
+  </div>
+  <div class="notSelectedFoods">
+  <span *ngIf="refValidated==0">DEVE SELECIONAR TODOS ANTES DE PROSSEGUIR</span>
+  </div>
+</section>
+
+<section *ngIf="getQuestions()==2" class="questions1">
+  <div>
+    <br>
+    <br>
+    <span id="ref2" >Escolha para o Almoço </span>
+    <div class="imgSelection" id="cs">
+      <img src="../../assets/img/Forkperguntando.png" alt="">
+      <span class="textRef" id="selection">
+
+        <select (change)="carb = $any($event).target.value">
+          <option *ngIf="carb == 0" [value]="0"></option>
+          <option *ngFor="let item of allCarbFoods" [value]="jsonStringfy(item)"  class="options">{{item.nome}}</option>
+        </select>
+
+        <select (change)="prot = $any($event).target.value">
+          <option *ngIf="prot == 0" [value]="0"></option>
+          <option *ngFor="let item of allProtFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+        </select>
+
+        <select (change)="legums = $any($event).target.value">
+          <option *ngIf="legums == 0" [value]="0"></option>
+          <option *ngFor="let item of allLegumsFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+        </select>
+
+        <select (change)="liquid = $any($event).target.value">
+          <option *ngIf="liquid == 0"  [value]="0"></option>
+          <option *ngFor="let item of allLiquidFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+        </select>
+
+        <select (change)="frut = $any($event).target.value">
+          <option *ngIf="frut == 0" [value]="0"></option>
+          <option *ngFor="let item of allFrutFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+        </select>
+
+      </span>
+  </div>
+  </div>
+  <div class="button">
+    <span (click)="setCompleteRef(carb,prot,frut,liquid,legums,refAl)" (click)="validateCompleteRef(true,true,carb,prot,frut,liquid,legums)" (click)="calcCalTotal(false,'Al')" (click)="sumQuestions()">
+    <img src="../../assets/img/arrow.png">
+  </span>
+  </div>
+  <div class="notSelectedFoods">
+    <span *ngIf="refValidated==0">DEVE SELECIONAR TODOS ANTES DE PROSSEGUIR</span>
+    </div>
+</section>
+
+<section *ngIf="getQuestions()==3" class="questions2">
+  <div>
+    <br>
+    <br>
+    <span id="ref2" >Escolha para o Lanche da Tarde </span>
+    <div class="imgSelection">
+      <span id="selection">
+
+        <select (change)="carb = $any($event).target.value">
+          <option *ngIf="carb == 0" [value]="0"></option>
+          <option *ngFor="let item of allCarbFoods" [value]="jsonStringfy(item)"  class="options">{{item.nome}}</option>
+        </select>
+
+      <select (change)="prot = $any($event).target.value">
+        <option *ngIf="prot == 0" [value]="0"></option>
+        <option *ngFor="let item of allProtFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+      </select>
+
+      <select (change)="liquid = $any($event).target.value">
+        <option *ngIf="liquid == 0"  [value]="0"></option>
+        <option *ngFor="let item of allLiquidFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+      </select>
+
+      <select (change)="frut = $any($event).target.value">
+        <option *ngIf="frut == 0" [value]="0"></option>
+        <option *ngFor="let item of allFrutFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+      </select>
+
+      </span>
+      <img class="imgMirror" src="../../assets/img/Forkperguntando.png" alt="">
+  </div>
+  </div>
+  <div class="button">
+    <span (click)="setCompleteRef(carb,prot,frut,liquid,legums,refLt)" (click)="validateCompleteRef(true,false,carb,prot,frut,liquid,legums)" (click)="calcCalTotal(true,'Lt')" (click)="sumQuestions()" >
+    <img src="../../assets/img/arrow.png">
+  </span>
+  </div>
+  <div class="notSelectedFoods">
+    <span *ngIf="refValidated==0">DEVE SELECIONAR TODOS ANTES DE PROSSEGUIR</span>
+    </div>
+</section>
+
+<section *ngIf="getQuestions()==4" class="questions1">
+  <div>
+    <br>
+    <br>
+    <span id="ref2" >Escolha para a Janta </span>
+    <div class="imgSelection">
+      <img src="../../assets/img/Forkperguntando.png" alt="">
+      <span id="selection">
+
+        <select (change)="carb = $any($event).target.value">
+          <option *ngIf="carb == 0" [value]="0"></option>
+          <option *ngFor="let item of allCarbFoods" [value]="jsonStringfy(item)"  class="options">{{item.nome}}</option>
+        </select>
+
+      <select (change)="prot = $any($event).target.value">
+        <option *ngIf="prot == 0" [value]="0"></option>
+        <option *ngFor="let item of allProtFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+      </select>
+
+      <select (change)="legums = $any($event).target.value">
+        <option *ngIf="legums == 0" [value]="0"></option>
+        <option *ngFor="let item of allLegumsFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+      </select>
+
+      <select (change)="liquid = $any($event).target.value">
+        <option *ngIf="liquid == 0"  [value]="0"></option>
+        <option *ngFor="let item of allLiquidFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+      </select>
+
+      <select (change)="frut = $any($event).target.value">
+        <option *ngIf="frut == 0" [value]="0">Nenhuma</option>
+        <option *ngFor="let item of allFrutFoods" [value]="jsonStringfy(item)" class="options">{{item.nome}}</option>
+      </select>
+
+      </span>
+  </div>
+  </div>
+  <div class="button">
+    <span (click)="setCompleteRef(carb,prot,frut,liquid,legums,refJa)" (click)="validateCompleteRef(true,true,carb,prot,frut,liquid,legums)" (click)="calcCalTotal(false,'Ja')" (click)="sumQuestions()">
+    <img src="../../assets/img/arrow.png">
+  </span>
+  </div>
+  <div class="notSelectedFoods">
+    <span *ngIf="refValidated==0">DEVE SELECIONAR TODOS ANTES DE PROSSEGUIR</span>
+    </div>
+</section>
+
+<section *ngIf="getQuestions()>4" class="loading">
+  <div class="container">
+    <div class="progress-bar"></div>
+    <div class="math1">
+        <img src="../../assets/img/math_formulas1.png" alt="">
+    </div>
+    <div class="math2">
+        <img src="../../assets/img/math_formulas2.png" alt="">
+    </div>
+    <div class="math3">
+        <img src="../../assets/img/math_formulas3.png" alt="">
+    </div>
+    <div class="math4">
+        <img src="../../assets/img/math_formulas4.png" alt="">
+    </div>
+</div>
+  <div class="div1">
+<div class="div2">
+  <span>Fazendo todos os calculos...</span>
+  <img src="../../assets/img/Forkeng.png" alt="">
+</div>
+</div>
+</section>
+
+</article>

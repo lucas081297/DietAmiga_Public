@@ -1,0 +1,137 @@
+<div class="title"><h1>O MEU PLANO</h1></div>
+    <article>
+    <section>
+
+        <div class="perfil">
+            <img routerLink="/perfil" src="../../assets/img/Home/perfil.svg">
+        </div>
+
+        <section>
+
+          <div class="refcm" routerLink="/cafemanha">
+            <div  id="imgrefcm">
+            <img src="../../assets/img/Home/cm.png">
+          </div>
+            <div id="itensref" *ngFor="let item of cm">
+              <span>
+                <label>{{item.carb_name}}</label>
+                <img [src]="'../../assets/img/Carboidrato/'+(item.carb_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{item.carb_qtd}}g</label>
+              </span>
+              <span>
+                <label>{{item.prot_name}}</label>
+                <img [src]="'../../assets/img/Proteína/'+(item.prot_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{item.prot_qtd}}g</label>
+              </span>
+              <span>
+                <label>{{item.liquid_name}}</label>
+                <img [src]="'../../assets/img/Líquido/'+(item.liquid_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>200ml</label>
+              </span>
+              <span *ngIf="item.fruit_id!=0">
+                <label>{{item.fruit_name}}</label>
+                <img [src]="'../../assets/img/Fruta/'+(item.fruit_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{ toint(item.fruit_qtd) }}un</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="refal" routerLink="/almoco">
+            <div id="imgrefal">
+            <img src="../../assets/img/Home/al.png">
+          </div>
+            <div id="itensref" *ngFor="let item of al">
+              <span>
+                <label>{{item.carb_name}}</label>
+                <img [src]="'../../assets/img/Carboidrato/'+(item.carb_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label class="textlabel">{{item.carb_qtd}}g</label>
+              </span>
+              <span>
+                <label>{{item.legum_name}}</label>
+                <img [src]="'../../assets/img/Legume/'+(item.legum_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{item.legum_qtd}}g</label>
+              </span>
+              <span>
+                <label>{{item.prot_name}}</label>
+                <img [src]="'../../assets/img/Proteína/'+(item.prot_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{item.prot_qtd}}g</label>
+              </span>
+              <span>
+                <label>{{item.liquid_name}}</label>
+                <img [src]="'../../assets/img/Líquido/'+(item.liquid_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>200ml</label>
+              </span>
+              <span *ngIf="item.fruit_id!=0">
+                <label>{{item.fruit_name}}</label>
+                <img [src]="'../../assets/img/Fruta/'+(item.fruit_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{ toint(item.fruit_qtd) }}un</label>
+              </span>
+            </div>
+          </div>
+
+
+          <div class="reflt" routerLink="/lanchetarde">
+            <div id="imgreflt">
+            <img src="../../assets/img/Home/lt.png">
+          </div>
+            <div id="itensref" *ngFor="let item of lt">
+              <span>
+                <label>{{item.carb_name}}</label>
+                <img [src]="'../../assets/img/Carboidrato/'+(item.carb_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{item.carb_qtd}}g</label>
+              </span>
+              <span>
+                <label>{{item.prot_name}}</label>
+                <img [src]="'../../assets/img/Proteína/'+(item.prot_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{item.prot_qtd}}g</label>
+              </span>
+              <span>
+                <label>{{item.liquid_name}}</label>
+                <img [src]="'../../assets/img/Líquido/'+(item.liquid_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>200ml</label>
+              </span>
+              <span *ngIf="item.fruit_id!=0">
+                <label>{{item.fruit_name}}</label>
+                <img [src]="'../../assets/img/Fruta/'+(item.fruit_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{ toint(item.fruit_qtd) }}un</label>
+              </span>
+            </div>
+          </div>
+
+
+          <div class="refja" routerLink="/janta">
+            <div id="imgrefja">
+            <img src="../../assets/img/Home/ja.png">
+          </div>
+            <div id="itensref" *ngFor="let item of ja">
+              <span>
+                <label>{{item.carb_name}}</label>
+                <img [src]="'../../assets/img/Carboidrato/'+(item.carb_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{item.carb_qtd}}g</label>
+              </span>
+              <span>
+                <label>{{item.legum_name}}</label>
+                <img [src]="'../../assets/img/Legume/'+(item.legum_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{item.legum_qtd}}g</label>
+              </span>
+              <span>
+                <label>{{item.prot_name}}</label>
+                <img [src]="'../../assets/img/Proteína/'+(item.prot_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{item.prot_qtd}}g</label>
+              </span>
+              <span>
+                <label>{{item.liquid_name}}</label>
+                <img [src]="'../../assets/img/Líquido/'+(item.liquid_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>200ml</label>
+              </span>
+              <span *ngIf="item.fruit_id!=0">
+                <label>{{item.fruit_name}}</label>
+                <img [src]="'../../assets/img/Fruta/'+(item.fruit_name).replaceAll(' ','-').toLowerCase()+'.png' " alt="">
+                <label>{{ toint(item.fruit_qtd) }}un</label>
+              </span>
+            </div>
+          </div>
+
+        </section>
+      </section>
+      </article>

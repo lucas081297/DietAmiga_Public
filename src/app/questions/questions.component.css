@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Vesper+Libre:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+article{
+  background: #E6B11F;
+  margin: -8px;
+  font-family: Russo One;
+}
+section{
+  margin: 8px;
+  margin-top: 1rem;
+}
+
+.questions1 img{
+  width: 4rem;
+  margin-right: 3rem;
+}
+
+.questions2 img{
+  width: 4rem;
+  margin-left: 3rem;
+}
+
+.imgMirror{
+  transform: rotateY(180deg);
+  animation: forkAppers 2s ease 0s 1 normal;
+
+}
+
+.TextQuestion{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: #FFFFFF; */
+  margin-bottom: -1.4rem;
+  min-height: 3rem;
+}
+
+.questions1 .TextQuestion{
+  margin-left: 4rem;
+
+}
+
+.questions2 .TextQuestion{
+  margin-right: 4rem;
+  width: 88%;
+}
+
+.TextQuestion span{
+  /* background-color: #FFFFFF; */
+  margin: 0 1rem;
+  overflow: hidden;
+  border-radius: 0 30px 30px 0;
+  /* white-space: nowrap; */
+}
+
+.TextQuestion span::after{
+
+  display:flex;
+	content: "";
+	width: 0;
+	height: 0;
+  position: absolute;
+	border-left: 0px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #ffffff;
+	left: 5.5em;
+  top: 2.5rem;
+}
+
+.textRef{
+  animation: forkAppers 2s ease 0s 1 normal forwards;
+}
+#ref2{
+  opacity: 0;
+  animation: fadeIn 5.8s ease 1 forwards;
+  margin-top: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-right: 4rem;
+}
+#cf span{
+  animation: break 17.4s ease, forkSay 5s steps(50) forwards;
+}
+#ref{
+  opacity: 0;
+  animation: fadeIn 5s ease 1 forwards 5s;
+}
+#fc span{
+  animation: break 16s ease, forkSay 5s steps(20) forwards;
+}
+.TextQuestion#2 span{
+  animation: break 16s ease, forkSay 5s steps(50) forwards;
+}
+
+#selection{
+  display: flex;
+  align-items: center;
+  width: 90%;
+  text-align: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.imgSelection{
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  margin-right: 2rem;
+}
+
+.imgSelection#1 img{
+  animation: forkAppers 2s ease 0s 1 normal forwards;
+}
+
+#cs{
+  animation: forkAppers 2s ease 0s 1 normal forwards;
+}
+
+#cs span{
+  opacity: 0;
+  animation: forkAppers 2s ease 1 normal forwards;
+}
+
+.imgSelection a{
+  animation: forkAppers 2s ease 5s 1 normal forwards;
+}
+
+.imgSelection span{
+  opacity: 0;
+  animation: forkAppers 2s ease 5s 1 normal forwards;
+}
+
+.imgSelection #selection{
+  opacity: 0;
+  animation: forkAppers 2s ease 1 normal forwards;
+}
+
+a{
+  background-color: #FFFFFF;
+  max-height: 3rem;
+  min-width: 8rem;
+  border-radius: 20%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 0.8rem;
+  font-family: Vesper Libre;
+  color: #FF5C00;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  margin-bottom: 0.04rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  opacity: 0;
+}
+a:visited{
+  text-decoration: none;
+  color: #FF5C00;
+}
+a:hover{
+  cursor: pointer;
+}
+
+select{
+  background-color: #FFFFFF;
+  max-height: 3rem;
+  min-width: 7rem;
+  border-radius: 20%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 0.8rem;
+  font-family: Vesper Libre;
+  color: #FF5C00;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  margin-bottom: 0.04rem;
+  margin-top: 1rem;
+}
+
+#ref{
+  margin-top: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-right: 4rem;
+}
+
+.button{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3rem;
+  margin-right: 4rem;
+}
+
+.button span{
+  background-color: #FFFFFF;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+.button img{
+  margin: 0;
+}
+.div1{
+  margin-left: 25rem;
+}
+
+.div2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin-top: 10rem;
+}
+.loading img{
+  width: 15rem;
+}
+
+.container {
+  height: 25px;
+  background-color: #CCC;
+  position: relative;
+}
+.container .progress-bar{
+ position: absolute;
+ height: 100%;
+ background-color: #9fd40f;
+ animation: progress-animation 12s normal forwards;
+}
+
+.math1{
+  position: relative;
+  left: 2rem;
+  top: 4rem;
+  animation: fadeAndOut 2s ease forwards infinite;
+  width: 10px;
+}
+
+.math2{
+  position: relative;
+  left: 50rem;
+  top: -5rem;
+  width: 10px;
+  opacity: 0%;
+  animation: fadeAndOut 2s ease 0.3s forwards infinite;
+}
+
+.math3{
+  position: relative;
+  left: 5rem;
+  top: -8rem;
+  width: 10px;
+  opacity: 0%;
+  animation: fadeAndOut 2s ease 0.6s forwards infinite;
+}
+
+.math4{
+  position: relative;
+  left: 35rem;
+  top: -20rem;
+  width: 10px;
+  opacity: 0%;
+  animation: fadeAndOut 2s ease 0.9s infinite;
+}
+
+.notSelectedFoods{
+  display: flex;
+  justify-content: center;
+  color: red;
+}
+
+
+@keyframes textReveal {
+  0%{
+    width: 0;
+    border-color: transparent ;
+  }
+  50%{
+    border-color: #FFFFFF;
+  }
+  100%{
+    width: 100%;
+    border-color: transparent;
+  }
+}
+
+@keyframes progress-animation{
+  0% { width: 0%; }
+  100% { width: 100%}
+}
+
+@keyframes fadeAndOut {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+  80%{
+    opacity: 0.8;
+
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+    opacity: 1;
+  }
+}
+
+@keyframes forkAppers {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes forkSay {
+0%{
+  background-color: #FFFFFF;
+  width: 0%;
+}
+100%{
+  background-color: #FFFFFF;
+  color: black;
+  width: 90%;
+
+}
+}
+
+@keyframes break {
+from{
+  white-space: nowrap;
+}
+to{
+  white-space: normal;
+}
+}

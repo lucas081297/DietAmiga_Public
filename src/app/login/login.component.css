@@ -1,0 +1,141 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Vesper+Libre:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+html{
+  background: #E6B11F;
+}
+body{
+  background: #E6B11F;
+  margin: -8px;
+}
+.container{
+  width: 100vw;
+  height: 100vh;
+  background: #E6B11F;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center
+}
+.square-login{
+  width: 500px;
+  height: 550px;
+  background: #F2E9B6;
+  border-radius: 50px;
+}
+.login-text{
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: -45px;
+}
+.login-text{
+  font-family: 'Vesper Libre', serif;
+  color: #FF7A00;
+  font-size: 5em;
+  margin-top: -10px;
+}
+.fork{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fork img{
+  width: 7em;
+  height: 12em;
+  margin-bottom: 10px;
+  animation: go-up 1s infinite alternate;
+}
+.credentials{
+  margin-left: 0.5em;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Spicy Rice', serif;
+  color: #F56412;
+}
+.credentials input{
+  border-radius: 2px;
+  border-color: rgba(0, 0, 0, 0.37);
+  display: flex;
+  width: 95%;
+  height: 1.5em;
+}
+.credentials div{
+  margin-bottom: 7px;
+  margin-top: 7px;
+}
+.forgot-password{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-family: 'Russo One', sans-serif;
+  font-size: smaller;
+}
+a{
+  text-decoration: none;
+  margin-left: 5px;
+}
+a:visited{
+  color: black;
+}
+.enter{
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+}
+.enter-disabled{
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+}
+.enter-disabled button{
+  width: 90%;
+  height: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.7em;
+  color: white;
+  background-color:#f6980a31 ;
+  border-color: #f6980a31;
+}
+.enter button{
+  width: 90%;
+  height: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.7em;
+  color: white;
+  background-color:#F6980A ;
+  border-color: #F6980A;
+}
+.register{
+  display: flex;
+  justify-content: center;
+  font-family: 'Russo One', sans-serif;
+}
+
+.error{
+  color: red;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+
+
+@keyframes go-up{
+  from{
+    transform: translateY(5px);
+    animation-delay: 500ms;
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+
